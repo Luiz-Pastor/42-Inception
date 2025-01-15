@@ -1,0 +1,13 @@
+services:
+  wordpress:
+    build:
+      context: requirements/wordpress/
+      dockerfile: Dockerfile
+    environment:
+      - USER=${MYSQL_USER}
+    networks:
+      - inception
+  
+networks:
+  inception:
+    driver: bridge

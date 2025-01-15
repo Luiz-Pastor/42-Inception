@@ -8,4 +8,8 @@ up:
 down:
 	@docker compose -f srcs/docker-compose.yml --env-file srcs/.env down
 
+# Rule to copy the env template
+env:
+	@cp srcs/.env_example srcs/.env
+
 .PHONY: up down

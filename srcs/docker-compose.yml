@@ -1,10 +1,16 @@
 services:
   wordpress:
+
     build:
       context: requirements/wordpress/
       dockerfile: Dockerfile
+
     environment:
-      - USER=${MYSQL_USER}
+      - MYSQL_DB=${MYSQL_DB}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=mariadb
+
     networks:
       - inception
   

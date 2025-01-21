@@ -12,4 +12,7 @@ down:
 env:
 	@cp srcs/.env_example srcs/.env
 
+clean: down
+	@rm -rf srcs/.env
+
 .PHONY: up down

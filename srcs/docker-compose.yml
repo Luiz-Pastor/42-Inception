@@ -4,13 +4,13 @@ services:
     build:
       context: requirements/wordpress/
       dockerfile: Dockerfile
-
     environment:
       - MYSQL_DB=${MYSQL_DB}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_HOST=mariadb
-
+      - MYSQL_HOST=mariadb:3306 # Name and port of the database container
+  
+    restart: always
     networks:
       - inception
   

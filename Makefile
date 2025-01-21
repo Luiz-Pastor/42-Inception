@@ -1,7 +1,7 @@
 all: up
 
 # Rule for lifting services/containers
-up:
+up: env
 	@docker compose -f srcs/docker-compose.yml up -d --build
 
 # Rule to stop services/containers
@@ -10,9 +10,11 @@ down:
 
 # Rule to copy the env template
 env:
-	@cp srcs/.env_example srcs/.env
+	@if [ ! -f srcs/.env ]; then \
+		cp srcs/.env_example srcs/.env; \
+	fi
 
 clean: down
 	@rm -rf srcs/.env
 
-.PHONY: up down
+.PHONY: all up down env clean

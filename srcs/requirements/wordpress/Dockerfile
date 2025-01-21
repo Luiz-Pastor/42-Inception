@@ -17,4 +17,7 @@ RUN		/tools/download_wordpress.sh
 
 COPY	tools/init.sh /tools
 
+# Save the php7.4-fpm config
+COPY	conf/www.conf /etc/php/7.4/fpm/pool.d/
+
 ENTRYPOINT		["bash", "tools/init.sh"]

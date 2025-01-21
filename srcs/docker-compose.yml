@@ -9,7 +9,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_HOST=mariadb:3306 # Name and port of the database container
-  
+
     restart: always
     networks:
       - inception

@@ -1,0 +1,15 @@
+[mysqld]
+
+user = mysql
+port = 3306
+bind-address = 0.0.0.0
+
+# Folder where the data will be saved
+datadir = /var/lib/mysql
+
+# TCP connections
+skip-networking = 0
+
+# Log system
+log-error = /var/log/mysql/error.log
+pid-file = /var/run/mysqld/mysqld.pid

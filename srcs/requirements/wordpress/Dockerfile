@@ -13,7 +13,7 @@ RUN		apt install -y	\
 RUN		mkdir -p /tools && chmod 777 /tools
 
 COPY	tools/download_wordpress.sh /tools
-RUN		/tools/download_wordpress.sh
+RUN		bash /tools/download_wordpress.sh
 
 COPY	tools/init.sh /tools
 

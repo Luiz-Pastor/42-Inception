@@ -7,7 +7,8 @@ RUN		apt update && apt upgrade -y
 RUN		apt install -y	\
 			wget \
 			php7.4-fpm \
-			php7.4-mysql
+			php7.4-mysql \
+			mariadb-client
 
 # Dir to save used scripts
 RUN		mkdir -p /tools && chmod 777 /tools
@@ -20,4 +21,4 @@ COPY	tools/init.sh /tools
 # Save the php7.4-fpm config
 COPY	conf/www.conf /etc/php/7.4/fpm/pool.d/
 
-ENTRYPOINT		["bash", "tools/init.sh"]
+ENTRYPOINT	["bash", "tools/init.sh"]

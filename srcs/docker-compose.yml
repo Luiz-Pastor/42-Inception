@@ -8,12 +8,14 @@ services:
       - MYSQL_DB=${MYSQL_DB}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_HOST=mariadb:3306 # Name and port of the database container
-
+      - MYSQL_HOST_NAME=mariadb # Name and port of the database container
+      - MYSQL_HOST_PORT=3306    # Port of the database container
+    depends_on:
+      - mariadb
     restart: always
     networks:
       - inception
-  
+
   mariadb:
     container_name: mariadb
     build:

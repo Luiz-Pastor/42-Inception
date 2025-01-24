@@ -17,5 +17,6 @@ COPY	tools/init.sh /tools
 
 # Copy the config
 COPY	conf/50-server.cnf /etc/mysql/mariadb.conf.d/
+RUN		chmod 644 /etc/mysql/mariadb.conf.d/50-server.cnf
 
-ENTRYPOINT	["sleep", "infinity"]
+ENTRYPOINT	["bash", "/tools/init.sh"]

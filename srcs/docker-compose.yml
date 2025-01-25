@@ -13,6 +13,8 @@ services:
     depends_on:
       - mariadb
     restart: always
+    volumes:
+      - wordpress:/var/www/html
     networks:
       - inception
 
@@ -26,8 +28,28 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    restart: always
+    volumes:
+      - mariadb:/var/lib/mysql
     networks:
       - inception
+
+volumes:
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: volumes/wordpress
+
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: volumes/mariadb
 
 networks:
   inception:

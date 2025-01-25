@@ -18,5 +18,5 @@ while true; do
 done
 echo "Connection confirmed!"
 
-# TODO: Execute the php controller
-sleep infinity
+# Execute the php controller
+php-fpm7.4 -F

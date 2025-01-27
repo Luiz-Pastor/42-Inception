@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Create the config file with the env variables
 cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 sed -i "s/define( 'DB_NAME', 'database_name_here' );/define( 'DB_NAME', '$MYSQL_DB' );/g" /var/www/html/wp-config.php

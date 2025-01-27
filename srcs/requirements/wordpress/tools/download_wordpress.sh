@@ -8,8 +8,8 @@ mkdir -p /var/www/html/
 mv wordpress/* /var/www/html/
 rm -rf latest.tar.gz wordpress/
 
-chown -R www-data:www-data /var/www/html/
-chmod -R 777 /var/www/html
+chown -R www-data:www-data /var/www/html
+chmod -R 755 /var/www/html
 
 mkdir -p /run/php
 chown -R www-data:www-data /run/php

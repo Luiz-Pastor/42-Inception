@@ -41,6 +41,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - PAGE_DOMAIN=${PAGE_DOMAIN}
+      - CERTS_PATH=${CERTS_PATH}
     depends_on:
       - wordpress
     restart: always

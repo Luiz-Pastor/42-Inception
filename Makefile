@@ -17,5 +17,6 @@ env:
 
 clean: down
 	@rm -rf srcs/.env
+	@rm -rf srcs/volumes
 
 .PHONY: all up down env clean

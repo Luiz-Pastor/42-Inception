@@ -7,7 +7,7 @@ The project is based on setting up three containers, each with one of the aforem
 
 1- Clone the repository.
 ```bash
-git clone https://github.com/Luiz-Pastor/Inception.git
+git clone https://github.com/Luiz-Pastor/42-Inception.git
 ```
 
 2- Create a `.env` file that has the variables from `.env.example` with the desired value.
@@ -21,7 +21,7 @@ By default they are saved in the `srcs/volumes` folder
 
 4- Run `make`.
 ```bash
-cd Inception
+cd 42-Inception
 make
 ```
 
